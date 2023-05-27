@@ -50,6 +50,8 @@ usethis::use_package("scales")
 usethis::use_package("glue")
 usethis::use_package("plotly")
 usethis::use_package("shinycssloaders")
+usethis::use_package("ranger")
+usethis::use_package("kernlab")
 ## Create Common Files ----
 ## See ?usethis for more information
 usethis::use_mit_license("Esteban Calle") # You can set another license here

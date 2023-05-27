@@ -18,6 +18,8 @@
 #' @import htmltools
 #' @import scales
 #' @import glue
+#' @import ranger
+#' @import kernlab
 #'
 mod_Classify_patients_ui <- function(id){
   ns <- NS(id)

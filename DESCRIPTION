@@ -1,0 +1,44 @@
+Package: Cancerclassif
+Title: Cancerclassif Beta Demo
+Version: 0.0.0.9000
+Authors@R: 
+    person("Esteban", "Calle", , "ecallef@uoc.edu", role = c("cre", "aut"))
+Description: Clasificación binaria (Sano / Cáncer) y multiclase (Tipo de
+    tumor) en pacientes con Machine Learning en base a muestras TCGA.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+Imports: 
+    bs4Dash,
+    caret,
+    config (>= 0.3.1),
+    data.validator,
+    dplyr,
+    DT,
+    glue,
+    golem (>= 0.4.0),
+    here,
+    htmltools,
+    pkgload,
+    plotly,
+    reactable,
+    reactablefmtr,
+    rio,
+    scales,
+    shiny (>= 1.7.4),
+    shinycssloaders,
+    shinyWidgets,
+    stats,
+    tibble,
+    tidyselect,
+    tools
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: es-ES
+LazyData: true
+RoxygenNote: 7.2.3
+URL: https://github.com/estebancalle/Cancerclassif
+BugReports: https://github.com/estebancalle/Cancerclassif/issues

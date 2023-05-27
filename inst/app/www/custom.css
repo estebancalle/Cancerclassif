@@ -1,0 +1,49 @@
+.dark-mode #upload_and_validate_data_1-info_box_content {
+    color: black;
+}
+
+.dark-mode #Classify_patients_1-info_class_box_content {
+    color: black;
+}
+
+.dark-mode #IA_info_1-infoupdatabox {
+    color: black;
+}
+
+.dark-mode #Home_1-Disclaimer {
+    color: black;
+}
+
+
+
+
+.dark-mode .dataTables_wrapper .dataTables_length,
+.dark-mode .dataTables_wrapper .dataTables_filter,
+.dark-mode .dataTables_wrapper .dataTables_info,
+.dark-mode .dataTables_wrapper .dataTables_processing,
+.dark-mode .dataTables_wrapper .dataTables_paginate,
+.dark-mode thead,
+.dark-mode tbody {
+  color: #ffffff;
+}
+
+
+.dark-mode .Reactable,
+.dark-mode .rt-search,
+.dark-mode .rt-filter,
+.dark-mode .rt-table,
+.dark-mode .rt-pagination,
+.dark-mode .rt-pagination-info,
+.dark-mode .rt-nav {
+    background-color: #333A40; /* Color de fondo oscuro */
+    color: #ffffff; /* Color del texto */
+}
+
+.btn-default {
+    background-color: #20c997;
+    border-color: #ddd;
+    color: #343a40;
+}
+.dark-mode .btn-default {
+    background-color: #20c997;
+}

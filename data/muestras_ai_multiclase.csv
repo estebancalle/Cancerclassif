@@ -1,0 +1,15 @@
+﻿Tipo de Cancer;Cancer name;Codigo;Muestras
+Carcinoma invasivo de mama;Breast invasive carcinoma ;BRCA ;241
+Carcinoma de células escamosas de cabeza y cuello;Head and neck squamous cell carcinoma ;HNSC ;120
+Glioma de grado inferior de cerebro;Brain Lower Grade Glioma;LGG;115
+Adenocarcinoma de pulmón;Lung adenocarcinoma ;LUAD ;110
+Carcinoma de células escamosas de pulmón;Lung squamous cell carcinoma ;LUSC ;110
+Carcinoma de células renales de tipo claro;Kidney renal clear cell carcinoma ;KIRC ;106
+Adenocarcinoma de próstata;Prostate adenocarcinoma ;PRAD ;105
+Carcinoma urotelial de vejiga;Bladder urothelial carcinoma ;BLCA ;97
+Carcinoma hepatocelular de hígado;Liver hepatocellular carcinoma ;LIHC ;94
+Adenocarcinoma de estómago;Stomach adenocarcinoma ;STAD ;73
+Cánceres cervicales y endocervicales;Cervical and endocervical cancers ;CESC ;60
+Adenocarcinoma de colon;Colon adenocarcinoma ;COAD ;60
+Carcinoma de ovario;Ovarian carcinoma;OV;56
+Carcinoma de células renales de tipo papilar;Kidney renal papillary cell carcinoma ;KIRP ;55

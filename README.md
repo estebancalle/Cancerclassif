@@ -32,7 +32,9 @@ pueden ser descargados en .csv y .xlsx
 **Online:**
 
 Puedes utilizar la herramienta desplegada en el servidor web
-*shinyapps.io*
+*shinyapps.io*:
+
+[CanceRClassif Web](https://estebancalle.shinyapps.io/Cancerclassif/)
 
 **Instalación local**
 
@@ -130,4 +132,3 @@ You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this. You could also
 use GitHub Actions to re-render `README.Rmd` every time you push. An
 example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.

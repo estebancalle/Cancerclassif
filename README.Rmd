@@ -38,7 +38,9 @@ La tabla con los resultados y la probabilidad sobre la clasificación pueden ser
 
 **Online:**
 
-Puedes utilizar la herramienta desplegada en el servidor web *shinyapps.io*
+Puedes utilizar la herramienta desplegada en el servidor web *shinyapps.io*:
+
+[CanceRClassif Web](https://estebancalle.shinyapps.io/Cancerclassif/)
 
 
 **Instalación local**
@@ -116,7 +118,4 @@ En la página info IA, del menú de navegación podrás encontrar más informaci
 # Modifica la apariencia de la aplicación
 
 En la barra superior de navegación podrás cambiar el modo claro u oscuro o cambiar los colores de los menús según tus preferencias.
-
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
 

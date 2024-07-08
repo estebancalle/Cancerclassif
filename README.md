@@ -3,7 +3,7 @@
 
 # CanceRClassif <img src="man/figures/hex_CanceRClassif.png" align="right" alt="CanceRClassif logo" style="height: 140px;"></a>
 
-> *Clasifica y detecta tumores en muestras de tejidos RNA-Seq de tus pacientes utilizando una aplicación web desarrollada en Shiny. La aplicación emplea un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, para clasificaciones a nivel binario (tumorales o normales) y multiclase (15 tipos de cáncer. Los resultados vienen acompañados de un diagnóstico y su probabilidad*
+> *Clasifica y detecta tumores en muestras de tejidos RNA-Seq de tus pacientes utilizando una aplicación web desarrollada en Shiny. La aplicación emplea un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, para clasificaciones a nivel binario (tumorales o normales) y multiclase (15 tipos de cáncer. Los resultados vienen acompañados de un diagnóstico y su probabilidad.*
 
 <!-- badges: start -->
 <!-- badges: end -->

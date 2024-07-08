@@ -3,56 +3,46 @@
 
 # CanceRClassif <img src="man/figures/hex_CanceRClassif.png" align="right" alt="CanceRClassif logo" style="height: 140px;"></a>
 
-> *Clasifica las muestras de tus pacientes, a nivel binario: Tumorales o
-> Normales y a nivel multiclase: distingue entre 15 tipos distintos de
-> cáncer.*
+> *Clasifica y detecta tumores en muestras de tejidos RNA-Seq de tus pacientes utilizando una aplicación web desarrollada en Shiny. La aplicación emplea un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, para clasificaciones a nivel binario (tumorales o normales) y multiclase (15 tipos de cáncer. Los resultados vienen acompañados de un diagnóstico y su probabilidad*
 
 <!-- badges: start -->
 <!-- badges: end -->
 
+![](man/figures/cancerclassifdemo.gif)
+
 ## Descripción
 
-`CanceRClassif` es una aplicación desarrollada en Shiny que permite
-clasificar muestras de pacientes con datos de expresión génica RNA-Seq
-para detectar y clasificar si la muestra es tumoral. Se concibe como una
-herramienta de apoyo al diagnóstico de los profesionales sanitarios.
+`CanceRClassif` es una aplicación web interactiva y fácil de usar desarrollada en Shiny para la clasificación y/o detección de cáncer. La aplicación ermite clasificar y detectar tumores en muestras de tejidos RNA-Seq de pacientes. Utiliza un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, proporcionando una clasificación binaria (Tumor o Normal) y multiclase (15 tipos distintos de cáncer). Los resultados vienen acompañados de un diagnóstico y su probabilidad.
 
-Tiene dos modos de clasificación:
+## Modos de Clasificación
+- **Binaria**: Clasifica las muestras como Tumor o Normal. Comprende 13 tipos de tumores: BLCA, BRCA, CESC, COAD, HNSC, KIRC, KIRP, LIHC, LUAD, LUSC, PRAD, STAD, THCA.
+- **Multiclase**: Distingue y clasifica 15 tipos diferentes de tumores: BLCA, BRCA, CESC, COAD, HNSC, KIRC, KIRP, LGG, LIHC, LUAD, LUSC, PRAD,   OV, STAD, PRAD
 
-- **Binaria**: Tumor o Normal.
-- **Multiclase**: entre 15 tipos de tumores.
+Los resultados de la clasificación, incluyendo las probabilidades asociadas, pueden descargarse en formato .csv y .xlsx para su análisis detallado.
 
-La tabla con los resultados y la probabilidad sobre la clasificación
-pueden ser descargados en .csv y .xlsx
+## Modelo y Pipeline
+El modelo de clasificación utilizado en CanceRClassif proviene de un pipeline de selección y entrenamiento de modelos utilizando datos RNA-Seq del proyecto TCGA (https://portal.gdc.cancer.gov/). Este [pipeline]((https://github.com/estebancalle/tcga_cancer_classification) incluye la extracción, transformación, preprocesamiento, estandarización, selección y extracción de características, análisis exploratorio de datos (EDA), clustering, y la implementación de algoritmos de machine learning (ML) y deep learning (DL).
 
-![](man/figures/cancerclassifdemo.gif)
+El modelo seleccionado es un Random Forest, optimizado con un algoritmo de selección de características (Boruta) para identificar los genes más relevantes para la clasificación.
+
+Para más detalles sobre el pipeline y el proceso de selección del modelo, visita el siguiente repositorio: [Cancer Classification Pipeline](https://github.com/estebancalle/tcga_cancer_classification)
 
 ## Instalación
 
 **Online:**
 
-Puedes utilizar la herramienta desplegada en el servidor web
-*shinyapps.io*:
+Utiliza la herramienta desplegada en el servidor web *shinyapps.io*:
 
 [CanceRClassif Web](https://estebancalle.shinyapps.io/Cancerclassif/)
 
 **Instalación local**
 
-`CanceRClassif` es una app construida como paquete de R. Puedes
-instalarla con la ayuda de la función `install_github()` que instala la
-aplicación desde el repositorio Github. Una vez instalada, tendrás la
-aplicación disponible a niver local. Para utilizarla debes activar la
-librería con la función `library()` y para lanzar la aplicación debes
-ejecutar la función `run_app()`.
+`CanceRClassif` es una app construida como paquete de R. Puedes instalarla y ejecutarla localmente con los siguientes comandos:
 
 ``` r
 # Instala
 remotes::install_github("estebancalle/Cancerclassif")
-```
 
-**Activación**
-
-``` r
 # Activa la librería
 library(Cancerclassif)
 
@@ -60,70 +50,31 @@ library(Cancerclassif)
 run_app()
 ```
 
-**Instalación docker**
+## Modo de empleo: 
 
-## Modo de empleo: Proceso de Clasificación
+### Proceso de Clasificación
 
-1.  Sube tus datos
-2.  Selecciona el dataset de trabajo, previsualizalo y valida su
-    formato.
-3.  Clasifica los pacientes y bájate los resultados
+1.  **Sube tus datos**: La aplicación acepta archivos en formatos .csv, .tsv, .sav, .dta, .xls, .xlsx, .rds, .rda.
+2.  **Valida el dataset**: Previsualiza y confirma el formato del dataset.
+3.  **Clasifica los pacientes**: Selecciona el modo de clasificación deseado y obtén los resultados, los cuales pueden descargarse.
 
-## Subir los datos y validarlos.
+### Subir los datos y validarlos.
 
-La aplicación permite subir uno o varios archivos en diversos formatos:
-.csv, .tsv, .sav, .dta, .xls, .xlsx, .rds, .rda
+- **Estructura**: Genes en columnas y muestras en filas.
+- **Columnas iniciales**: 'Sample' y 'PacienteID' deben ser las dos primeras columnas.
+- **Genoma de referencia**: Las muestras deben estar alineadas con hg19.
+- **Anotaciones de genes**: Los nombres de las columnas deben seguir el formato 'nombre_gen|entrezgeneID' (Ej: NAT2|10). Consultar   BiomaRt para más info.
 
-Para probar la aplicación, Enciende el botón que carga los datos de
-prueba o test.
+### Clasificación y Descarga de Resultados
 
-Selecciona el dataset de trabajo y confirma que se ha cargado
-correctamente previsualizandolo.
+- **Modo Binario**: Clasifica las muestras como Normal o Tumor. Los resultados vienen acompañados de un diagnóstico y su probabilidad (Verde: ≥ 0.75, Amarillo: ≥ 0.6 & < 0.75, Rojo: < 0.6).
+- **Modo Multiclase**: Clasifica las muestras en 15 tipos de tumores distintos. Los resultados vienen acompañados de un diagnóstico y su probabilidad.
 
-Valida su correcto formato antes de pasar a la clasificación.
+Los resultados incluyen fecha de análisis, nombre de la muestra, código identificativo del paciente, diagnóstico y probabilidad. La tabla resultante es interactiva y se puede descargar en formato .csv o .xlsx.
 
-- Los genes deben estar en las columnas y las muestras en las filas. Las
-  dos primeras columnas deben ser: Sample y PacienteID de formato
-  carácter o factor.
-- Las muestras deben haber sido alineadas con el genoma de referencia
-  *hg19*.
-- Las anotaciones de los genes (nombres de las columnas) deben estar
-  formadas por ‘nombre_gen\|entrezgeneID’ (Ej: NAT2\|10). Consultar
-  BiomaRt para más info.
+## Información Adicional
 
-## Clasifica las muestras y descárgate la tabla resultante-
+En la página "Info IA" del menú de navegación, puedes encontrar más detalles sobre los algoritmos de entrenamiento y las muestras utilizadas para ajustar los modelos de machine learning. Esta transparencia asegura que los usuarios comprendan el funcionamiento interno de la herramienta.
 
-Selecciona el modo de clasificación deseado y comienza la clasificación.
-
-- En modo Binario: Las muestras de los pacientes serán clasificadas como
-  Normal y Tumor. Cada diagnóstico viene acompañado de una probabilidad:
-  Verde: \>= 0.75, Amarillo: \>= 0.6 & \< 0.75 , Rojo: \< 0.6. A nivel
-  interno se comprenden 13 tipos de tumores: BLCA, BRCA, CESC, COAD,
-  HNSC, KIRC, KIRP, LIHC, LUAD, LUSC, PRAD, STAD, THCA.”
-
-- En modo Multiclase:Las muestras de los pacientes serán clasificadas en
-  15 tumores distintos. Se comprenden 15 tipos distintos de tumores:
-  BLCA, BRCA, CESC, COAD, HNSC, KIRC, KIRP, LGG, LIHC, LUAD, LUSC, PRAD,
-  OV, STAD, PRAD. Cada diagnóstico viene acompañado de una probabilidad:
-  Verde: \>= 0.75, Amarillo: \>= 0.6 & \< 0.75 , Rojo: \< 0.6.
-
-La tabla resultante incluye la fecha de análisis, nombre de la muestra
-(Sample), código identificativo del paciente (PacienteID), el
-diagnóstico y la probabilidad de acierto de la clase diagnósticada según
-el modelo de machine learning.
-
-La tabla es interactiva. Puedes usar filtros para explorar los
-resultados.
-
-Descárgate los resultados en formato .csv o .xlxs
-
-## Explora el funcionamiento interno
-
-En la página info IA, del menú de navegación podrás encontrar más
-información sobre los algoritmos de entrenamiento y las muestras que se
-utilizaron para ajustar los algoritmos.
-
-# Modifica la apariencia de la aplicación
-
-En la barra superior de navegación podrás cambiar el modo claro u oscuro
-o cambiar los colores de los menús según tus preferencias.
+## Personalización
+En la barra superior de navegación, puedes cambiar el modo de visualización (claro/oscuro) y personalizar los colores de los menús según tus preferencias, mejorando la experiencia del usuario.

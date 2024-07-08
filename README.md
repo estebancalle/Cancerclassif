@@ -12,7 +12,7 @@
 
 ## Descripción
 
-`CanceRClassif` es una aplicación web interactiva y fácil de usar desarrollada en Shiny para la clasificación y/o detección de cáncer. La aplicación ermite clasificar y detectar tumores en muestras de tejidos RNA-Seq de pacientes. Utiliza un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, proporcionando una clasificación binaria (Tumor o Normal) y multiclase (15 tipos distintos de cáncer). Los resultados vienen acompañados de un diagnóstico y su probabilidad.
+`CanceRClassif` es una aplicación web interactiva y fácil de usar desarrollada en Shiny para la clasificación y/o detección de cáncer. La aplicación permite clasificar y detectar tumores en muestras de tejidos RNA-Seq de pacientes. Utiliza un modelo de machine learning basado en Random Forest, optimizado con el algoritmo de selección de características Boruta, proporcionando una clasificación binaria (Tumor o Normal) y multiclase (15 tipos distintos de cáncer). Los resultados vienen acompañados de un diagnóstico y su probabilidad.
 
 ## Modos de Clasificación
 - **Binaria**: Clasifica las muestras como Tumor o Normal. Comprende 13 tipos de tumores: BLCA, BRCA, CESC, COAD, HNSC, KIRC, KIRP, LIHC, LUAD, LUSC, PRAD, STAD, THCA.

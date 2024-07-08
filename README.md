@@ -21,7 +21,7 @@
 Los resultados de la clasificación, incluyendo las probabilidades asociadas, pueden descargarse en formato .csv y .xlsx para su análisis detallado.
 
 ## Modelo y Pipeline
-El modelo de clasificación utilizado en CanceRClassif proviene de un pipeline de selección y entrenamiento de modelos utilizando datos RNA-Seq del proyecto TCGA (https://portal.gdc.cancer.gov/). Este [pipeline]((https://github.com/estebancalle/tcga_cancer_classification) incluye la extracción, transformación, preprocesamiento, estandarización, selección y extracción de características, análisis exploratorio de datos (EDA), clustering, y la implementación de algoritmos de machine learning (ML) y deep learning (DL).
+El modelo de clasificación utilizado en CanceRClassif proviene de un pipeline de selección y entrenamiento de modelos utilizando datos RNA-Seq del proyecto TCGA (https://portal.gdc.cancer.gov/). Este [pipeline](https://github.com/estebancalle/tcga_cancer_classification) incluye la extracción, transformación, preprocesamiento, estandarización, selección y extracción de características, análisis exploratorio de datos (EDA), clustering, y la implementación de algoritmos de machine learning (ML) y deep learning (DL).
 
 El modelo seleccionado es un Random Forest, optimizado con un algoritmo de selección de características (Boruta) para identificar los genes más relevantes para la clasificación.
 
